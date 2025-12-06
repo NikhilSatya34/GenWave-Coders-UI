@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+/* Navbar */
+header {
+    background: #0b66c3;
+    padding: 15px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HERO SECTION ===== */
+.about-hero {
+    width: 100%;
+    height: 45vh;
+    background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c')
+     no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    position: relative;
+    color: white;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.about-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.about-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #a8d4ff;
+}
+
+.about-text p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ===== MAIN CONTENT ===== */
+.container {
+    padding: 50px 80px;
+}
+
+h2 {
+    font-size: 30px;
+    color: #004aad;
+    margin-top: 40px;
+}
+
+p, ul li {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+ul {
+    margin-left: 20px;
+}

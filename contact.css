@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+/* Navbar */
+header {
+    background: #0b66c3;
+    padding: 15px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== HERO SECTION ===== */
+.conntact-hero {
+    height: 40vh;
+   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c')
+                center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    color: white;
+    position: relative;
+}
+
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.contact-hero h1,
+.contact-hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-hero h1 {
+    font-size: 48px;
+    color: #cbe2ff;
+}
+
+.contact-hero p {
+    font-size: 20px;
+    max-width: 600px;
+}
+
+/* ===== CONTACT CONTENT ===== */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 80px;
+    gap: 40px;
+}
+
+/* CONTACT INFORMATION BOX */
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    width: 45%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-card h2 {
+    color: #004aad;
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* CONTACT FORM */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    width: 45%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+    color: #004aad;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #aac7ff;
+    font-size: 16px;
+    background: #f9fbff;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    background: #0b6fde;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #004aad;
+}
+

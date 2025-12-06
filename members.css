@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+/* Navbar */
+header {
+    background: #0b66c3;
+    padding: 15px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* ================= HERO SECTION ================= */
+.team-hero {
+    height: 40vh;
+    background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c')
+     no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    color: white;
+    position: relative;
+}
+
+.team-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.team-hero h1,
+.team-hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.team-hero h1 {
+    font-size: 50px;
+    color: #c8e2ff;
+}
+
+.team-hero p {
+    font-size: 20px;
+    max-width: 600px;
+}
+
+/* ================= TEAM CARDS ================= */
+.team-container {
+    padding: 50px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background: white;
+    padding: 20px;
+    border-radius: 05px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 15%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-card h2 {
+    color: #004aad;
+    margin-bottom: 5px;
+}
+
+.team-card .role {
+    color: #0b6fde;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ================= FACULTY SECTION ================= */
+.faculty-section {
+    padding: 40px 80px;
+}
+
+.faculty-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 450px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.faculty-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.faculty-card h3 {
+    margin: 0;
+    color: #004aad;
+}
