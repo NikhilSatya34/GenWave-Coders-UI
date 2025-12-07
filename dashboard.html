@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | GenWave Coders</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+        }
+
+        .header {
+            background: #0057b7;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        table th {
+            background: #0057b7;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        table tr:hover {
+            background: #e9f3ff;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">GenWave Coders – Admin Dashboard</div>
+
+    <div class="container">
+        <h2>📩 Received Contact Messages</h2>
+
+        <div id="loading" class="loading">Loading messages...</div>
+
+        <table id="messagesTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+    <!-- ===================== JAVASCRIPT ===================== -->
+    <script>
+        async function loadMessages() {
+            try {
+                const res = await fetch("http://localhost:5000/api/contact/messages");
+                const data = await res.json();
+
+                const table = document.getElementById("messagesTable");
+                const tbody = table.querySelector("tbody");
+                const loading = document.getElementById("loading");
+
+                loading.style.display = "none"; // Hide loading text
+                table.style.display = "table";  // Show table
+
+                data.data.forEach(msg => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${msg.name}</td>
+                            <td>${msg.email}</td>
+                            <td>${msg.message}</td>
+                            <td>${new Date(msg.date).toLocaleString()}</td>
+                        </tr>
+                    `;
+                });
+
+            } catch (error) {
+                document.getElementById("loading").innerText = "Failed to load messages.";
+            }
+        }
+
+        loadMessages();
+    </script>
+
+</body>
+</html>
