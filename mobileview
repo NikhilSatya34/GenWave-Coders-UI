@@ -1,0 +1,98 @@
+/* ================== Global Responsive Fix ================== */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Make images scale in small screens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar Responsive */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .register-btn {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Hero Section Responsive */
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* Contact Page Responsive */
+@media (max-width: 768px) {
+
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-card, 
+    .contact-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+    }
+}
+
+/* Team Page Responsive */
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-card {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+/* Events Page Responsive */
+@media (max-width: 768px) {
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+        padding: 20px;
+    }
+}
