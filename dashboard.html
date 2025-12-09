@@ -83,6 +83,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Roll Number</th>
                     <th>Email</th>
                     <th>Message</th>
                     <th>Date</th>
@@ -111,6 +112,7 @@
                     tbody.innerHTML += `
                         <tr>
                             <td>${msg.name}</td>
+                             <td>${msg.roll}</td>
                             <td>${msg.email}</td>
                             <td>${msg.message}</td>
                             <td>${new Date(msg.date).toLocaleString()}</td>
@@ -128,3 +130,4 @@
 
 </body>
 </html>
+
