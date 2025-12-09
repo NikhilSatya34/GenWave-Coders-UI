@@ -52,6 +52,7 @@
             
             <label for="roll">Roll Number</label>
             <input type="text" id="roll" name="rollNumber" placeholder="Enter your Roll Number" required>
+            
             <label for="email">Email</label>
             <input id="email" type="email" placeholder="Enter your email" required>
 
@@ -68,14 +69,14 @@ document.querySelector(".contact-form").addEventListener("submit", async functio
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-    const roll = document.getElementById("roll").value;
+    const rollNumber = document.getElementById("roll").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("msg").value;
 
     const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message })
+        body: JSON.stringify({ name, rollNumber, email, message })
     });
 
     const result = await response.json();
@@ -91,6 +92,7 @@ document.querySelector(".contact-form").addEventListener("submit", async functio
 
 </body>
 </html>
+
 
 
 
