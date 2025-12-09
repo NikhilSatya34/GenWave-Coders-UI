@@ -57,7 +57,7 @@
             <input id="email" type="email" placeholder="Enter your email" required>
 
             <label for="msg">Message</label>
-            <textarea id="msg" placeholder="Write your Idead here . . . " required></textarea>
+            <textarea id="msg" placeholder="Write your Ideas here . . . " required></textarea>
 
             <button type="submit">Send Message</button>
         </form>
@@ -69,14 +69,14 @@ document.querySelector(".contact-form").addEventListener("submit", async functio
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-    const rollNumber = document.getElementById("rollNumber").value;
+    const roll = document.getElementById("rollNumber").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("msg").value;
 
     const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, rollNumber, email, message })
+        body: JSON.stringify({ name, roll, email, message })
     });
 
     const result = await response.json();
@@ -92,6 +92,7 @@ document.querySelector(".contact-form").addEventListener("submit", async functio
 
 </body>
 </html>
+
 
 
 
