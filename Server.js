@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
 
-const app = express();  // <-- VERY IMPORTANT
+const app = express();
 app.use(express.json());
 app.use(cors());
 
@@ -15,15 +15,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/genwave_db")
 
 // ===================== CONTACT FORM =====================
 
-//CONTACT SCHEMA
-    const contactSchema = new mongoose.Schema({
+// UPDATED CONTACT SCHEMA (Added rollNumber)
+const contactSchema = new mongoose.Schema({
     name: String,
-    rollNumber: String,   // <-- Added
+    rollNumber: String,   // <-- NEW FIELD
     email: String,
     message: String,
     date: { type: Date, default: Date.now }
 });
-
 
 // MODEL
 const Contact = mongoose.model("Contact", contactSchema);
@@ -31,9 +30,15 @@ const Contact = mongoose.model("Contact", contactSchema);
 // POST API — STORE CONTACT MESSAGE
 app.post("/api/contact", async (req, res) => {
     try {
-        const { name, rollNumber, email, message } = req.body;
+        const { name, rollNumber, email, message } = req.body;  // <-- include rollNumber
 
-        const newMessage = new Contact({ name,rollNumber, email, message });
+        const newMessage = new Contact({
+            name,
+            rollNumber,  // <-- store roll number
+            email,
+            message
+        });
+
         await newMessage.save();
 
         res.json({ success: true, message: "Message stored successfully!" });
@@ -60,4 +65,3 @@ app.get("/api/contact/messages", async (req, res) => {
 app.listen(5000, () => {
     console.log("API Running on http://localhost:5000");
 });
-
