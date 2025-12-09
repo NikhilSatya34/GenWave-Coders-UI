@@ -4,52 +4,68 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-/* Navbar */
+
+/* ========================= NAVBAR ========================= */
 header {
+    width: 100%;
     background: #0b66c3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     padding: 15px 50px;
 }
 
-nav {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav .logo {
+.logo {
     font-size: 22px;
     color: #fff;
     font-weight: 700;
 }
 
-nav .nav-links {
+/* Navigation Links (Desktop) */
+.nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-nav .nav-links a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
 
-nav .nav-links a:hover {
+.nav-links a:hover {
     text-decoration: underline;
 }
+
+/* Register Button */
 .register-btn {
     padding: 10px 20px;
     background-color: #ff4d4d;
-    color: white;
+    color: white !important;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 20px;
     transition: 0.3s;
 }
 
 .register-btn:hover {
     background-color: #e60000;
+}
+
+/* ===== Hamburger Icon (Mobile) ===== */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 /* ===== HERO SECTION ===== */
 .about-hero {
@@ -110,4 +126,5 @@ p, ul li {
 ul {
     margin-left: 20px;
 }
+
 
