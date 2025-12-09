@@ -4,108 +4,53 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
-/* ========================= NAVBAR ========================= */
+/* Navbar */
 header {
-    width: 100%;
     background: #0b66c3;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
     padding: 15px 50px;
 }
 
-.navbar {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
+nav .logo {
     font-size: 22px;
     color: #fff;
     font-weight: 700;
 }
 
-/* Navigation Links (Desktop) */
-.nav-links {
+nav .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-.nav-links a {
+nav .nav-links a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
 
-.nav-links a:hover {
+nav .nav-links a:hover {
     text-decoration: underline;
 }
-
-/* Register Button */
 .register-btn {
     padding: 10px 20px;
     background-color: #ff4d4d;
-    color: white !important;
+    color: white;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    margin-left: 20px;
     transition: 0.3s;
 }
 
 .register-btn:hover {
     background-color: #e60000;
 }
-
-/* ===== Hamburger Icon (Mobile) ===== */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-}
-
-/* ===== MOBILE NAVBAR ===== */
-@media (max-width: 768px) {
-
-    header {
-        padding: 15px 20px;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #0b66c3;
-        padding: 20px 0;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 10px 0;
-    }
-
-    /* Fix content hiding behind navbar */
-    body {
-        padding-top: 90px;
-    }
-}
-
 /* ========================= HERO SECTION ========================= */
 .hero {
     height: 80vh;
@@ -206,3 +151,4 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
