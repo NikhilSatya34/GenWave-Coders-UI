@@ -37,7 +37,20 @@ nav .nav-links a {
 nav .nav-links a:hover {
     text-decoration: underline;
 }
+.register-btn {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: 0.3s;
+}
 
+.register-btn:hover {
+    background-color: #e60000;
+}
 /* ===== HERO SECTION ===== */
 .about-hero {
     width: 100%;
@@ -97,3 +110,4 @@ p, ul li {
 ul {
     margin-left: 20px;
 }
+
