@@ -95,45 +95,53 @@
 
 
     <!-- ===================== JAVASCRIPT ===================== -->
-    <script>
-        async function loadMessages() {
-            try {
-                const res = await fetch("https://genwave-backend.onrender.com/api/contact/messages")
-
-                const data = await res.json();
-
-                const table = document.getElementById("messagesTable");
-                const tbody = table.querySelector("tbody");
-                const loading = document.getElementById("loading");
-
-                loading.style.display = "none"; 
-                table.style.display = "table";  
-
-                data.data.forEach(msg => {
-                   tbody.innerHTML = "";   // 🔥 ADD THIS LINE
+        <script>
+                async function loadMessages() {
+                  try {
+                    const res = await fetch(
+                      "https://genwave-backend.onrender.com/api/contact/messages"
+                    );
+                
+                    const data = await res.json();
+                
+                    const table = document.getElementById("messagesTable");
+                    const tbody = table.querySelector("tbody");
+                    const loading = document.getElementById("loading");
+                
+                    // hide loading
+                    loading.style.display = "none";
+                    table.style.display = "table";
+                
+                    // clear old rows
+                    tbody.innerHTML = "";
+                
+                    // add rows
                     data.data.forEach(msg => {
-                          tbody.innerHTML += `
-                            <tr>
-                              <td>${msg.name}</td>
-                              <td>${msg.roll || "N/A"}</td>
-                              <td>${msg.email}</td>
-                              <td>${msg.message}</td>
-                              <td>${new Date(msg.date).toLocaleString()}</td>
-                            </tr>
-                          `;
-                        });
+                      tbody.innerHTML += `
+                        <tr>
+                          <td>${msg.name}</td>
+                          <td>${msg.roll || "N/A"}</td>
+                          <td>${msg.email}</td>
+                          <td>${msg.message}</td>
+                          <td>${new Date(msg.date).toLocaleString()}</td>
+                        </tr>
+                      `;
+                    });
+                
+                  } catch (error) {
+                    document.getElementById("loading").innerText =
+                      "Failed to load messages.";
+                    console.error(error);
+                  }
+                }
+                
+                loadMessages();
+     </script>
 
-
-            } catch (error) {
-                document.getElementById("loading").innerText = "Failed to load messages.";
-            }
-        }
-
-        loadMessages();
-    </script>
 
 </body>
 </html>
+
 
 
 
