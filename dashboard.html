@@ -110,16 +110,19 @@
                 table.style.display = "table";  
 
                 data.data.forEach(msg => {
-                    tbody.innerHTML += `
-                        <tr>
-                            <td>${msg.name}</td>
-                            <td>${msg.roll}</td>  <!-- SHOW ROLL NUMBER -->
-                            <td>${msg.email}</td>
-                            <td>${msg.message}</td>
-                            <td>${new Date(msg.date).toLocaleString()}</td>
-                        </tr>
-                    `;
-                });
+                   tbody.innerHTML = "";   // 🔥 ADD THIS LINE
+                    data.data.forEach(msg => {
+                          tbody.innerHTML += `
+                            <tr>
+                              <td>${msg.name}</td>
+                              <td>${msg.roll || "N/A"}</td>
+                              <td>${msg.email}</td>
+                              <td>${msg.message}</td>
+                              <td>${new Date(msg.date).toLocaleString()}</td>
+                            </tr>
+                          `;
+                        });
+
 
             } catch (error) {
                 document.getElementById("loading").innerText = "Failed to load messages.";
@@ -131,5 +134,6 @@
 
 </body>
 </html>
+
 
 
