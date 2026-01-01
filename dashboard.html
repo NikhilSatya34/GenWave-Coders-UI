@@ -98,7 +98,8 @@
     <script>
         async function loadMessages() {
             try {
-                const res = await fetch("http://localhost:5000/api/contact/messages");
+                const res = await fetch("https://genwave-backend.onrender.com/api/contact/messages")
+
                 const data = await res.json();
 
                 const table = document.getElementById("messagesTable");
@@ -130,3 +131,4 @@
 
 </body>
 </html>
+
