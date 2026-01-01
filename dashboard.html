@@ -113,7 +113,7 @@
                     tbody.innerHTML += `
                         <tr>
                             <td>${msg.name}</td>
-                            <td>${msg.rollNumber || "N/A"}</td>  <!-- SHOW ROLL NUMBER -->
+                            <td>${msg.roll}</td>  <!-- SHOW ROLL NUMBER -->
                             <td>${msg.email}</td>
                             <td>${msg.message}</td>
                             <td>${new Date(msg.date).toLocaleString()}</td>
@@ -131,4 +131,5 @@
 
 </body>
 </html>
+
 
